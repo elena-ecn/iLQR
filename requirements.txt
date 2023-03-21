@@ -1,0 +1,4 @@
+jax==0.3.25
+matplotlib==3.6.2
+numpy==1.24.2
+seaborn==0.12.2
