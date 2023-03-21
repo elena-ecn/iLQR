@@ -30,6 +30,7 @@ import jax.numpy as jnp
 from model import Model
 from ddp import DDP
 from dynamical_sys import acrobot_dynamics, cartpole_dynamics
+from plotter import CartpolePlotter, AcrobotPlotter, plot_trajectories
 
 
 def acrobot_data():
@@ -89,6 +90,17 @@ def main():
     print("Total cost: J = {}".format(J))
     print("Final state error: {}".format(jnp.linalg.norm(x_traj[:, -1] - x_goal)))
     print('-'*40)
+
+    plot_trajectories(x_traj, u_traj)
+
+    # Create animation
+    if dyn_sys == "Acrobot":
+        Plotter = AcrobotPlotter
+    elif dyn_sys == "Cartpole":
+        Plotter = CartpolePlotter
+
+    plotter = Plotter()
+    plotter.plot_animation(x_traj, Ts)
 
 
 if __name__ == "__main__":
