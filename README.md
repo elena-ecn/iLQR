@@ -46,7 +46,7 @@ Installation
 
 To use this project, install it locally via:
 ```
-git clone https://github.com/elena-ecn/SpaceX-Dragon-mpc.git
+git clone https://github.com/elena-ecn/iLQR.git
 ```
 
 The dependencies can be installed by running:
