@@ -8,12 +8,15 @@ Differential Dynamic Programming (DDP) is an indirect method which optimizes ove
 
 The controller solves the following finite-horizon optimization problem:
 
-$$ \begin{align*} 
-\min_{x_{1:N},u_{1:N-1}} \quad & \sum_{i=1}^{N-1} \bigg[ \frac{1}{2} (x_i - {x}_{ref})^TQ({x}_i - {x}_{ref}) + \frac{1}{2} u_i^TRu_i \bigg] + \frac{1}{2}(x_N- {x}_{ref})^TQ_f
-({x}_N- {x}_{ref})\\
- \text{st} \quad & x_1 = x_{\text{IC}} \\
- & x_{i+1} = f(x_i, u_i)  \quad \text{for } i = 1,2,\ldots,N-1  
- \end{align*}$$
+$$
+\begin{aligned} 
+\min\_{x_{1:N},u_{1:N-1}} \quad & \sum\_{i=1}^{N-1} \bigg[ \frac{1}{2} (x\_i - {x}\_{ref})^TQ({x}\_i - {x}\_{ref}) + \frac{1}{2} u\_i^TRu\_i \bigg] + \frac{1}{2}(x\_N- {x}\_{ref})^TQ\_f
+({x}\_N- {x}\_{ref})\\
+\text{st} \quad 
+& x\_1 = x\_{\text{IC}} \\
+& x\_{i+1} = f(x\_i, u\_i)  \quad \text{for } i = 1,2,\ldots,N-1  
+\end{aligned}
+$$
 
 
 <br>
